@@ -1,0 +1,15 @@
+From: "GitHub" <noreply@github.com>
+Subject: Security alert: new sign-in to your account
+Date: Thu, 23 Jul 2026 06:45:00 +0000
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=github.com; dkim=pass; dmarc=pass
+Content-Type: text/plain; charset="UTF-8"
+
+Hi there,
+
+We noticed a new sign-in to your GitHub account from a new device.
+
+If this was you, no action is needed. If you don't recognize this activity,
+please review your account security settings at https://github.com/settings/security
+
+Thanks,
+The GitHub Team

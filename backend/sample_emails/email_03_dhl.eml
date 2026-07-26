@@ -1,0 +1,20 @@
+Return-Path: <tracking@dhl-shipping-alert.com>
+Received: from dhl-shipping-alert.com (192.0.2.44)
+From: "DHL Express" <tracking@dhl-shipping-alert.com>
+To: customer@example.com
+Subject: Delivery Failed - Action Required
+Date: Tue, 21 Jul 2026 11:20:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Dear Customer,
+
+We attempted to deliver your package today but were unsuccessful.
+
+Please confirm your shipping details and pay the small redelivery fee here:
+
+http://dhl-redelivery.example
+
+Your package will be returned after 48 hours if no action is taken.
+
+DHL Delivery Services

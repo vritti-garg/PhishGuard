@@ -1,0 +1,20 @@
+Return-Path: <admin@office365-security-alert.com>
+Received: from office365-security-alert.com (203.0.113.25)
+From: "Microsoft 365 Admin" <admin@office365-security-alert.com>
+To: employee@example.com
+Subject: Your Microsoft 365 Password Expires Today
+Date: Tue, 21 Jul 2026 10:05:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Dear User,
+
+Your Microsoft 365 password expires today.
+
+To avoid losing access to your mailbox, update your password now:
+
+http://microsoft365-password-reset.example
+
+Failure to act today will permanently disable your mailbox.
+
+IT Support

@@ -1,0 +1,20 @@
+Return-Path: <billing@netflix-membership-support.com>
+Received: from netflix-membership-support.com (203.0.113.92)
+From: "Netflix Billing" <billing@netflix-membership-support.com>
+To: customer@example.com
+Subject: Your Netflix Subscription Has Been Suspended
+Date: Wed, 22 Jul 2026 09:40:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Dear Subscriber,
+
+Your latest payment could not be processed.
+
+To continue enjoying Netflix without interruption, please update your payment information:
+
+http://netflix-payment-update.example
+
+Your subscription will be cancelled within 24 hours if payment is not received.
+
+Netflix Billing Team

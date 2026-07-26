@@ -1,0 +1,20 @@
+Return-Path: <security@google-account-alert.com>
+Received: from google-account-alert.com (198.51.100.72)
+From: "Google Security" <security@google-account-alert.com>
+To: user@example.com
+Subject: Critical Security Alert: Sign-in Attempt Blocked
+Date: Wed, 22 Jul 2026 08:10:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Dear Google User,
+
+We blocked a suspicious sign-in attempt from an unknown device.
+
+If this was not you, secure your account immediately by visiting:
+
+http://google-security-check.example
+
+Failure to verify your identity within 12 hours may result in account suspension.
+
+Google Account Protection Team

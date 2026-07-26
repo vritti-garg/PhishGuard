@@ -1,0 +1,16 @@
+From: "HR Department" <hr@company.com>
+Subject: Updated benefits enrollment - please review
+Date: Thu, 23 Jul 2026 09:00:00 +0000
+Authentication-Results: mx.google.com; spf=neutral smtp.mailfrom=company.com; dkim=none; dmarc=none
+Content-Type: text/plain; charset="UTF-8"
+
+Hi,
+
+We've updated the benefits enrollment portal for this year. Please review
+your selections before the end of the month at the link below:
+
+https://company-benefits-portal.com/login
+
+Let us know if you have any questions.
+
+HR Team

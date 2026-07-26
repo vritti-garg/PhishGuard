@@ -1,0 +1,20 @@
+Return-Path: <ithelpdesk@student-portal-support.com>
+Received: from student-portal-support.com (203.0.113.120)
+From: "University IT Helpdesk" <ithelpdesk@student-portal-support.com>
+To: student@example.com
+Subject: Student Portal Password Reset Required
+Date: Wed, 22 Jul 2026 14:05:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Dear Student,
+
+Our records indicate that your university portal password has expired.
+
+To avoid losing access to examination results and course registrations, reset your password below:
+
+http://university-portal-reset.example
+
+Please complete the process before midnight.
+
+University IT Helpdesk

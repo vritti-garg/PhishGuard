@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PhishGuard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+</head>
+<body>
+
+<div class="console-bar">
+  <span class="status-dot"></span>
+  <span class="logo">PhishGuard</span>
+  <span class="status-text">AI PHISHING TRIAGE &amp; COACHING AGENT</span>
+</div>
+
+<div class="tabs">
+  <div class="tab active" data-view="upload" tabindex="0">Upload</div>
+  <div class="tab" data-view="results" tabindex="0">Results</div>
+  <div class="tab" data-view="dashboard" tabindex="0">Dashboard</div>
+</div>
+
+<div class="page">
+
+  <!-- ===================== UPLOAD VIEW ===================== -->
+  <div class="view active" id="view-upload">
+    <h1>Analyze a reported email</h1>
+    <p class="subtitle">Upload a forwarded .eml file to run it through detection, AI triage, and coaching.</p>
+
+    <div class="card">
+      <div class="dropzone" id="dropzone">
+        <input type="file" id="fileInput" accept=".eml">
+        <div class="icon">📩</div>
+        <div class="primary-text" id="dropzoneText">Drop a .eml file here, or click to browse</div>
+        <div class="secondary-text">.eml files only</div>
+      </div>
+    </div>
+
+    <div class="card" id="uploadResultCard" style="display:none;"></div>
+  </div>
+
+  <!-- ===================== RESULTS VIEW ===================== -->
+  <div class="view" id="view-results">
+    <h1>Analyzed emails</h1>
+    <p class="subtitle">All emails processed so far. Click one to see the full triage and coaching detail.</p>
+
+    <div class="card" id="resultsListCard">
+      <div class="empty-state">Loading...</div>
+    </div>
+
+    <div class="card" id="resultsDetailCard" style="display:none;"></div>
+  </div>
+
+  <!-- ===================== DASHBOARD VIEW ===================== -->
+  <div class="view" id="view-dashboard">
+    <h1>Dashboard</h1>
+    <p class="subtitle">Aggregated phishing trends across all analyzed emails.</p>
+
+    <div class="stat-grid" id="statGrid"></div>
+
+    <div class="card">
+      <h3 style="margin-top:0;">Top techniques detected</h3>
+      <canvas id="techniqueChart" height="140"></canvas>
+    </div>
+
+    <div class="card">
+      <h3 style="margin-top:0;">Verdicts over time</h3>
+      <canvas id="trendChart" height="140"></canvas>
+    </div>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

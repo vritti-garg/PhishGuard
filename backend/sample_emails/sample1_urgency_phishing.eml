@@ -1,0 +1,16 @@
+From: "IT Support" <it-support@company-alerts-secure.com>
+Subject: Action Required: Password Expiring Today
+Date: Mon, 20 Jul 2026 09:15:00 +0000
+Authentication-Results: mx.google.com; spf=fail smtp.mailfrom=company-alerts-secure.com; dkim=none; dmarc=fail (p=REJECT)
+Content-Type: text/plain; charset="UTF-8"
+
+Dear Employee,
+
+Your company email password will expire in 2 hours. To avoid losing access,
+please verify your credentials immediately using the link below:
+
+http://bit.ly/reset-pass-now
+
+Failure to do so will result in account lockout.
+
+IT Support Team

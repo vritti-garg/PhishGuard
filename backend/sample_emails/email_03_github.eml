@@ -1,0 +1,19 @@
+Return-Path: <notifications@github.com>
+Received: from github.com (140.82.121.4)
+From: "GitHub" <notifications@github.com>
+To: developer@example.com
+Subject: Pull Request Merged Successfully
+Date: Wed, 22 Jul 2026 09:00:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Hello,
+
+Your pull request "Improve email parser" has been merged into the main branch.
+
+Repository:
+https://github.com/example/phishguard
+
+Thank you for contributing!
+
+GitHub Notifications

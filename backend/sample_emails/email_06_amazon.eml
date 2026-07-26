@@ -1,0 +1,21 @@
+Return-Path: <shipment-tracking@amazon.in>
+Received: from amazon.in (176.32.103.205)
+From: "Amazon.in" <shipment-tracking@amazon.in>
+To: customer@example.com
+Subject: Your Amazon Order Has Been Confirmed
+Date: Wed, 22 Jul 2026 11:20:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Hello,
+
+Thank you for shopping with Amazon.
+
+Your order has been confirmed and is being prepared for shipment.
+
+Estimated Delivery:
+25 July 2026
+
+You can view your order details from your Amazon account.
+
+Amazon Customer Service

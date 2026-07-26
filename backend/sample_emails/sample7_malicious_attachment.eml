@@ -1,0 +1,21 @@
+From: "Invoice Dept" <billing@invoice-services-inc.com>
+Subject: Invoice #48291 Overdue - Payment Required
+Date: Thu, 23 Jul 2026 12:20:00 +0000
+Authentication-Results: mx.google.com; spf=fail smtp.mailfrom=invoice-services-inc.com; dkim=none; dmarc=fail
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="BOUNDARY123"
+
+--BOUNDARY123
+Content-Type: text/plain; charset="UTF-8"
+
+Please find attached your overdue invoice. Payment is due immediately to
+avoid late fees. Open the attached file for full details.
+
+--BOUNDARY123
+Content-Type: application/octet-stream; name="Invoice_48291.exe"
+Content-Disposition: attachment; filename="Invoice_48291.exe"
+Content-Transfer-Encoding: base64
+
+VGhpcyBpcyBhIGZha2UgYXR0YWNobWVudCBmb3IgdGVzdGluZyBwdXJwb3Nlcy4=
+
+--BOUNDARY123--

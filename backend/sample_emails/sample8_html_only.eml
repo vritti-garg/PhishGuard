@@ -1,0 +1,12 @@
+From: "Promo Team" <deals@shopnow-deals.com>
+Subject: 70% OFF - Today Only!
+Date: Thu, 23 Jul 2026 15:00:00 +0000
+Authentication-Results: mx.google.com; spf=softfail smtp.mailfrom=shopnow-deals.com; dkim=none; dmarc=none
+Content-Type: text/html; charset="UTF-8"
+
+<html>
+<body>
+<h1>Huge Sale Today!</h1>
+<p>Click <a href="http://shopnow-deals.com/sale?ref=xyz">here</a> to grab 70% off before it's gone.</p>
+</body>
+</html>

@@ -1,0 +1,21 @@
+Return-Path: <calendar-notification@google.com>
+Received: from google.com (142.250.182.14)
+From: "Google Calendar" <calendar-notification@google.com>
+To: user@example.com
+Subject: Reminder: Project Meeting Tomorrow
+Date: Wed, 22 Jul 2026 18:30:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+This is a reminder for your upcoming event.
+
+Event:
+MiniSOC Project Review
+
+Date:
+23 July 2026
+
+Time:
+10:00 AM
+
+Google Calendar

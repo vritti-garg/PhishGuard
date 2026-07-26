@@ -1,0 +1,18 @@
+From: "Priya Sharma" <priya.sharma@company.com>
+Subject: Notes from today's standup
+Date: Wed, 22 Jul 2026 11:00:00 +0000
+Authentication-Results: mx.google.com; spf=pass smtp.mailfrom=company.com; dkim=pass; dmarc=pass
+Content-Type: text/plain; charset="UTF-8"
+
+Hi team,
+
+Quick recap from today's standup:
+
+- Backend API integration is on track for Friday
+- QA found two minor bugs in the login flow, tickets are filed
+- Design review moved to Thursday 3pm
+
+Let me know if I missed anything.
+
+Thanks,
+Priya

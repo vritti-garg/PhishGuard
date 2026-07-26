@@ -1,0 +1,22 @@
+Return-Path: <security@paypal-secure-support.com>
+Received: from mail.paypal-secure-support.com (198.51.100.10)
+From: "PayPal Security" <security@paypal-secure-support.com>
+To: victim@example.com
+Subject: Urgent: Verify Your PayPal Account
+Date: Tue, 21 Jul 2026 09:15:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Dear Customer,
+
+We detected unusual activity on your PayPal account.
+Your account has been temporarily limited.
+
+Please verify your account immediately by visiting:
+
+http://paypal-account-verify.example/login
+
+Failure to verify within 24 hours will result in permanent suspension.
+
+Thank you,
+PayPal Security Team

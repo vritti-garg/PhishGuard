@@ -1,0 +1,20 @@
+Return-Path: <refunds@tax-refund-gov.com>
+Received: from tax-refund-gov.com (192.0.2.77)
+From: "Income Tax Department" <refunds@tax-refund-gov.com>
+To: taxpayer@example.com
+Subject: You Are Eligible for a Tax Refund
+Date: Wed, 22 Jul 2026 10:55:00 +0000
+MIME-Version: 1.0
+Content-Type: text/plain; charset=UTF-8
+
+Dear Taxpayer,
+
+After reviewing your tax records, we have determined that you are eligible for a refund of ₹28,450.
+
+To receive your refund, confirm your banking information here:
+
+http://income-tax-refund.example
+
+Claims not completed within 48 hours will expire.
+
+Income Tax Refund Department

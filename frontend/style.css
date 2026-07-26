@@ -1,0 +1,413 @@
+/* ==========================================================================
+   PhishGuard — design tokens
+   Aesthetic: clinical security-console. Cool slate background, deep teal
+   accent, semantic red/amber/green verdict colors. IBM Plex Sans for UI,
+   IBM Plex Mono for technical fields (senders, domains, timestamps).
+   ========================================================================== */
+
+:root {
+  --bg: #eef2f6;
+  --surface: #ffffff;
+  --surface-sunken: #f5f7fa;
+  --border: #d8dee6;
+  --ink: #101828;
+  --ink-muted: #5b6472;
+  --accent: #2a6f77;
+  --accent-dark: #1e4f55;
+  --accent-soft: #e3eef0;
+
+  --danger: #c4392b;
+  --danger-soft: #fbe9e7;
+  --warning: #b8832a;
+  --warning-soft: #fbf1e0;
+  --safe: #2f7a4d;
+  --safe-soft: #e7f3ec;
+
+  --radius: 10px;
+  --shadow: 0 1px 2px rgba(16, 24, 40, 0.06), 0 1px 3px rgba(16, 24, 40, 0.08);
+
+  --font-ui: "IBM Plex Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "IBM Plex Mono", "SF Mono", Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* ---------- Top console bar ---------- */
+
+.console-bar {
+  background: var(--ink);
+  color: white;
+  padding: 14px 28px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.console-bar .logo {
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+}
+
+.console-bar .status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--safe);
+  box-shadow: 0 0 0 3px rgba(47, 122, 77, 0.25);
+}
+
+.console-bar .status-text {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #a8b3bd;
+}
+
+/* ---------- Tabs ---------- */
+
+.tabs {
+  display: flex;
+  gap: 4px;
+  padding: 0 28px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.tab {
+  padding: 14px 18px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  user-select: none;
+}
+
+.tab:hover {
+  color: var(--ink);
+}
+
+.tab.active {
+  color: var(--accent-dark);
+  border-bottom-color: var(--accent);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+/* ---------- Layout ---------- */
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 24px 64px;
+}
+
+.view {
+  display: none;
+}
+
+.view.active {
+  display: block;
+}
+
+h1 {
+  font-size: 22px;
+  margin: 0 0 6px;
+}
+
+.subtitle {
+  color: var(--ink-muted);
+  margin: 0 0 28px;
+  font-size: 14px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+/* ---------- Upload zone (signature element) ---------- */
+
+.dropzone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 48px 24px;
+  text-align: center;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.dropzone:hover,
+.dropzone.dragover {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.dropzone .icon {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.dropzone .primary-text {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.dropzone .secondary-text {
+  font-size: 13px;
+  color: var(--ink-muted);
+  font-family: var(--font-mono);
+}
+
+.dropzone input[type="file"] {
+  display: none;
+}
+
+/* Scanning-line animation while analysis is in progress */
+.dropzone.scanning::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -30%;
+  width: 30%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(42, 111, 119, 0.25),
+    transparent
+  );
+  animation: scan-sweep 1.4s linear infinite;
+}
+
+@keyframes scan-sweep {
+  from { left: -30%; }
+  to { left: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dropzone.scanning::after {
+    animation: none;
+  }
+}
+
+/* ---------- Buttons ---------- */
+
+button {
+  font-family: var(--font-ui);
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  border-radius: 6px;
+  padding: 10px 18px;
+  cursor: pointer;
+  background: var(--accent);
+  color: white;
+}
+
+button:hover {
+  background: var(--accent-dark);
+}
+
+button:disabled {
+  background: var(--border);
+  color: var(--ink-muted);
+  cursor: not-allowed;
+}
+
+button:focus-visible {
+  outline: 2px solid var(--accent-dark);
+  outline-offset: 2px;
+}
+
+button.secondary {
+  background: transparent;
+  color: var(--accent-dark);
+  border: 1px solid var(--border);
+}
+
+button.secondary:hover {
+  background: var(--surface-sunken);
+}
+
+/* ---------- Verdict badges ---------- */
+
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge.phishing { background: var(--danger-soft); color: var(--danger); }
+.badge.suspicious { background: var(--warning-soft); color: var(--warning); }
+.badge.legitimate { background: var(--safe-soft); color: var(--safe); }
+
+/* ---------- Results list ---------- */
+
+.result-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+}
+
+.result-row:last-child {
+  border-bottom: none;
+}
+
+.result-row:hover {
+  background: var(--surface-sunken);
+}
+
+.result-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.result-subject {
+  font-weight: 500;
+}
+
+.result-sender {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--ink-muted);
+}
+
+/* ---------- Detail view ---------- */
+
+.detail-field {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--surface-sunken);
+  font-size: 14px;
+}
+
+.detail-field .label {
+  width: 130px;
+  flex-shrink: 0;
+  color: var(--ink-muted);
+}
+
+.detail-field .value {
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.reasoning-box,
+.coaching-box {
+  background: var(--surface-sunken);
+  border-radius: 8px;
+  padding: 16px;
+  margin-top: 12px;
+  font-size: 14px;
+}
+
+.coaching-box {
+  background: var(--accent-soft);
+}
+
+/* ---------- Dashboard ---------- */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px;
+  text-align: center;
+}
+
+.stat-number {
+  font-family: var(--font-mono);
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 4px;
+}
+
+.stat-card.phishing .stat-number { color: var(--danger); }
+.stat-card.suspicious .stat-number { color: var(--warning); }
+.stat-card.legitimate .stat-number { color: var(--safe); }
+
+table.dept-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+table.dept-table th,
+table.dept-table td {
+  text-align: left;
+  padding: 10px 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+table.dept-table th {
+  color: var(--ink-muted);
+  font-weight: 500;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--ink-muted);
+}
+
+/* ---------- Responsive ---------- */
+
+@media (max-width: 640px) {
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+  .detail-field {
+    flex-direction: column;
+    gap: 2px;
+  }
+  .detail-field .label {
+    width: auto;
+  }
+}
