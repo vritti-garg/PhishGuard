@@ -226,22 +226,36 @@ async function loadDashboard() {
     // Trend over time line chart
     const trend = data.trend_over_time || [];
     const trendCtx = document.getElementById("trendChart");
+    const trendEmptyMsg = document.getElementById("trendEmptyMsg");
+
     if (trendChartInstance) trendChartInstance.destroy();
-    trendChartInstance = new Chart(trendCtx, {
-      type: "line",
-      data: {
-        labels: trend.map((t) => t.date),
-        datasets: [
-          { label: "Phishing", data: trend.map((t) => t.phishing), borderColor: "#c4392b", tension: 0.2 },
-          { label: "Suspicious", data: trend.map((t) => t.suspicious), borderColor: "#b8832a", tension: 0.2 },
-          { label: "Legitimate", data: trend.map((t) => t.legitimate), borderColor: "#2f7a4d", tension: 0.2 },
-        ],
-      },
-      options: {
-        responsive: true,
-        scales: { y: { beginAtZero: true, ticks: { precision: 0 } } },
-      },
-    });
+
+    if (trend.length === 0) {
+      trendCtx.style.display = "none";
+      trendEmptyMsg.style.display = "block";
+    } else {
+      trendCtx.style.display = "block";
+      trendEmptyMsg.style.display = "none";
+
+      trendChartInstance = new Chart(trendCtx, {
+        type: "line",
+        data: {
+          labels: trend.map((t) => t.date),
+          datasets: [
+            { label: "Phishing", data: trend.map((t) => t.phishing), borderColor: "#c4392b", backgroundColor: "#c4392b", tension: 0.2, pointRadius: 6, borderWidth: 2 },
+            { label: "Suspicious", data: trend.map((t) => t.suspicious), borderColor: "#b8832a", backgroundColor: "#b8832a", tension: 0.2, pointRadius: 6, borderWidth: 2 },
+            { label: "Legitimate", data: trend.map((t) => t.legitimate), borderColor: "#2f7a4d", backgroundColor: "#2f7a4d", tension: 0.2, pointRadius: 6, borderWidth: 2 },
+          ],
+        },
+        options: {
+          responsive: true,
+          scales: {
+            y: { beginAtZero: true, ticks: { precision: 0 } },
+            x: { offset: true }, // adds padding so a single point isn't stuck at the edge
+          },
+        },
+      });
+    }
 
   } catch (err) {
     statGrid.innerHTML = `<div class="empty-state">Couldn't load dashboard. Is the backend running at ${API_BASE}?</div>`;
