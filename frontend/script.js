@@ -4,7 +4,7 @@
 // Change API_BASE if your backend runs on a different host/port.
 // ============================================================
 
-const API_BASE = "https://phishguard-iih7.onrender.com";
+const API_BASE = "https://phishguard-iih7.onrender.com".replace(/\/+$/, "");
 
 // ---------- Tab switching ----------
 
