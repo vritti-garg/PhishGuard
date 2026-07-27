@@ -37,54 +37,39 @@ from ai.llm_agent import generate_coaching_message as _live_generate_coaching_me
 DEMO_TRIAGE_CACHE = {
     "sample1_urgency_phishing.eml": {
         "verdict": "phishing",
-        "technique": "urgency_pressure",
+        "technique": "Credential Harvesting",
         "severity": "high",
-        "confidence": 0.91,
-        "reasoning": "The email failed SPF, DKIM, and DMARC checks, used a shortened "
-                      "bit.ly URL to hide its real destination, and applied urgency "
-                      "language ('2 hours', 'account lockout') to rush the recipient "
-                      "into clicking without verifying.",
+        "confidence": 0.95,
+        "reasoning": "The email fails all authentication checks (SPF fail, DKIM none, DMARC fail), uses a shortened URL (bit.ly) to obscure the true phishing destination, and employs urgency pressure ('2 hours', 'immediately', 'account lockout') to drive credential harvesting via a fake password reset link. ",
         "manual_review_required": False,
     },
     "sample2_bec_phishing.eml": {
         "verdict": "phishing",
         "technique": "business_email_compromise",
-        "severity": "critical",
-        "confidence": 0.88,
-        "reasoning": "The email impersonates a company executive, requests an urgent "
-                      "wire transfer, asks the recipient to keep it confidential, and "
-                      "failed SPF/DKIM/DMARC -- a classic CEO-fraud pattern.",
+        "severity": "high",
+        "confidence": 0.90,
+        "reasoning": "The email fails SPF, DKIM, and DMARC authentication, indicating a spoofed sender. It also uses urgency and impersonation of a CEO to request a wire transfer, which are hallmark signs of a business email compromise phishing attempt.",
         "manual_review_required": False,
     },
     "sample4_legitimate_internal.eml": {
         "verdict": "legitimate",
         "technique": "none_detected",
         "severity": "low",
-        "confidence": 0.85,
-        "reasoning": "The email passed SPF, DKIM, and DMARC checks, contains no "
-                      "suspicious links or urgency language, and reads as a routine "
-                      "internal status update.",
+        "confidence": 0.95,
+        "reasoning": "All email authentication checks (SPF/DKIM/DMARC) passed, confirming the sender domain is legitimate. The email contains no URLs, attachments, or suspicious content, and the message is a routine team update with no urgency, credential requests, or financial instructions.",
         "manual_review_required": False,
     },
 }
 
 DEMO_COACHING_CACHE = {
     "sample1_urgency_phishing.eml": (
-        "This email was phishing. It used urgency -- a tight deadline and a threat of "
-        "losing account access -- to rush you into clicking without checking first. "
-        "Next time, if an email pressures you to act immediately, pause and verify "
-        "directly with IT before clicking anything."
+        "The email you received was actually a phishing attempt, not a safe message. It used urgent language and a shortened link that hides the real destination, both classic signs of a scam. A good habit is to hover over any link to see the actual web address before clicking, and to verify urgent requests by contacting the sender through a known channel. Thanks for flagging it — your careful eye helps keep our systems secure."
     ),
     "sample2_bec_phishing.eml": (
-        "This email was phishing, specifically a 'CEO fraud' attempt. It impersonated "
-        "a company executive and pushed for an urgent, confidential wire transfer. "
-        "Real executives rarely ask for secretive financial actions over email -- when "
-        "in doubt, confirm requests like this by phone or in person."
+        "The email you reported was identified as a malicious phishing attempt. Two clues were the slightly misspelled sender address (“compnayholdings.com” instead of the correct domain) and the urgent request for a wire transfer that supposedly came from the CEO. Next time, if you get an unexpected, urgent moneytransfer request, pause and verify it through a separate channel — like a quick call or message to the person — before acting. Thanks for being vigilant and reporting it; your caution helps keep everyone safe."
     ),
     "sample4_legitimate_internal.eml": (
-        "This email looks safe. It passed all our authentication checks and reads like "
-        "a normal internal update with no red flags. Good instinct reporting it anyway -- "
-        "that's exactly the right habit to keep."
+        "The email you received is safe — it’s a routine team update from Priya. It passed all the normal checks and has no links, attachments, or urgent requests that often signal a problem. In the future, watch for messages that try to create urgency, ask for passwords, or include unexpected files. Thanks for staying vigilant; your caution helps keep everyone’s inbox secure"
     ),
 }
 
