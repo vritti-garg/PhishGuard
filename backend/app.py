@@ -25,7 +25,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
 from parser.email_parser import analyze_email
-from ai.llm_agent import triage_email, generate_coaching_message
+from ai.demo_cache import triage_email_with_cache, generate_coaching_message_with_cache
 from database.db import (
     init_db,
     save_analysis,
@@ -89,11 +89,13 @@ async def analyze(file: UploadFile = File(...)):
         # Stage 1
         parsed = analyze_email(temp_path)
 
-        # Stage 2
-        triage = triage_email(parsed)
+        # Stage 2 -- tries the live API first, falls back to a pre-cached
+        # verdict ONLY if this exact filename matches a known demo sample
+        # AND the live call failed (see ai/demo_cache.py)
+        triage = triage_email_with_cache(parsed, filename=file.filename)
 
         # Stage 3
-        coaching = generate_coaching_message(triage, parsed)
+        coaching = generate_coaching_message_with_cache(triage, parsed, filename=file.filename)
 
         # Save everything together
         saved = save_analysis(parsed, triage, coaching)
